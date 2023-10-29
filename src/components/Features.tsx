@@ -36,7 +36,7 @@ const Features = () => {
           }
         </div>
        <div className="flex w-1/2 h-auto justify-center items-center">
-        <img src={featureImg} alt="feature" className='rounded h-96'/>
+        <img src={featureImg} alt="feature" className='rounded h-96 object-cover'/>
        </div>
       </div>
     </div>
