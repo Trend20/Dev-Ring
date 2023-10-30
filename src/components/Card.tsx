@@ -14,4 +14,4 @@ const Card = ({svg, cardValue, cardDescription}: CardProps):JSX.Element => {
   )
 }
 
-export default Card
+export default Card;
