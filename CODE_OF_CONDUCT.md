@@ -1,4 +1,4 @@
-# Contributor Covenant Code of Conduct
+# DevRing Covenant Code of Conduct
 
 ## Our Pledge
 

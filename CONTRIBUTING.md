@@ -1,17 +1,17 @@
-# Contribution Guide to Contriquest.
+# Contribution Guide to DevRing.
 
-We would ❤️ it if you contributed to the project and helped make ContriQuest even better. We will make sure that contributing to ContriQuest is easy, enjoyable, and educational for anyone and everyone. All contributions are welcome, including features, issues, documentation, guides, and more.
+We would ❤️ it if you contributed to the project and helped make DevRing even better. We will make sure that contributing to DevRing is easy, enjoyable, and educational for anyone and everyone. All contributions are welcome, including features, issues, documentation, guides, and more.
 
 ## Got a question?
 
-You can ask questions, shoot me an [Email](enockomondi305@gmail.com), and discuss ContriQuest-related topics.
+You can ask questions, shoot me an [Email](enockomondi305@gmail.com), and discuss DevRing-related topics.
 ## Found a bug?
 
-If you find a bug in the source code, you can help us by [submitting an issue](https://github.com/Trend20/ContriQuest/issues/new) to our GitHub Repository. Even better, you can submit a Pull Request with a fix.
+If you find a bug in the source code, you can help us by [submitting an issue](https://github.com/Trend20/Dev-Ring/issues/new) to our GitHub Repository. Even better, you can submit a Pull Request with a fix.
 
 ## Missing a feature?
 
-You can request a new feature by [submitting an issue](https://github.com/Trend20/ContriQuest/issues/new) to our GitHub Repository.
+You can request a new feature by [submitting an issue](https://github.com/Trend20/Dev-Ring/issues/new) to our GitHub Repository.
 
 If you'd like to implement a new feature, it's always good to be in touch with us before you invest time and effort, since not all features can be supported.
 
@@ -23,19 +23,15 @@ If you'd like to implement a new feature, it's always good to be in touch with u
 If you want to help out with a code contribution, our project uses the following stack:
 
 ### Server-side
-
-- [Node.JS](https://nodejs.org/)
-- [TypeScript](https://www.typescriptlang.org/docs)
-- [NestJS](https://docs.nestjs.com/)
-- [Prisma](https://www.prisma.io/docs/) (with [MongoDB](https://www.mongodb.com/))
+- [Firebase](https://firebase.google.com/)
 - [Jest](https://docs.nestjs.com/fundamentals/testing) (for testing)
 
 ### Client-side
 
-- [NextJS](https://nextjs.org/)
+- [ReactJS](https://react.dev)
 - [TypeScript](https://www.typescriptlang.org/docs)
 
-If you don't feel ready to make a code contribution yet, no problem! You can also check out the [readme here](https://github.com/Trend20/ContriQuest/blob/main/README.md) to understand how the project works.
+If you don't feel ready to make a code contribution yet, no problem! You can also check out the [readme here](https://github.com/Trend20/Dev-Ring/blob/main/README.md) to understand how the project works.
 
 # <a name="submit-pr"></a> How do I make a code contribution?
 
@@ -114,7 +110,7 @@ fix(server): missing entity on init
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
 
-[Code of Conduct](https://github.com/Trend20/ContriQuest/blob/main/CODE_OF_CONDUCT.md)
+[Code of Conduct](https://github.com/Trend20/Dev-Ring/blob/main/CODE_OF_CONDUCT.md)
 
 Our Code of Conduct means that you are responsible for treating everyone on the project with respect and courtesy.
 
