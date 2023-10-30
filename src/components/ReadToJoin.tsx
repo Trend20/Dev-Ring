@@ -1,6 +1,6 @@
 const ReadToJoin = (): JSX.Element => {
   return (
-    <div className="flex text-cyan-200 flex-col justify-center items-center w-1/2 m-auto p-5 mt-40">
+    <div className="flex text-cyan-200 flex-col justify-center items-center w-1/2 m-auto p-5 mt-32">
       <p className="flex w-72 -rotate-45">
         <svg viewBox="0 0 200 200">
           <path
@@ -19,7 +19,7 @@ const ReadToJoin = (): JSX.Element => {
         skills, expanding their networks, and building great things. You’re just
         a few clicks away from finding the perfect community for you!
       </p>
-      <button className="text-black rounded bg-cyan-300 font-bold p-3 mt-5 justify-center items-center flex w-40">
+      <button className="text-black rounded-br-lg bg-cyan-300 font-bold p-3 mt-5 justify-center items-center flex w-40">
         Find Yours Now!
       </button>
     </div>
