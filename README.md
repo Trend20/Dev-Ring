@@ -11,7 +11,7 @@ It aims to provide a centralized platform for developers `to track and showcase 
 
 This platform can also be used by `employers` to easily find `developers` who best suits their companies.
 
-![user-form](public/assets/images/homepage.png)
+![user-form](src/assets/images/home.png)
 
 ## Tech Stack
 
