@@ -30,6 +30,7 @@ If you want to help out with a code contribution, our project uses the following
 
 - [ReactJS](https://react.dev)
 - [TypeScript](https://www.typescriptlang.org/docs)
+- [TailwindCSS](https://tailwindcss.com/)
 
 If you don't feel ready to make a code contribution yet, no problem! You can also check out the [readme here](https://github.com/Trend20/Dev-Ring/blob/main/README.md) to understand how the project works.
 
