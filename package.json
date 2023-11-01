@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.0",
     "firebase": "^10.5.2",
     "firebase-tools": "^12.7.0",
+    "init": "^0.1.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -22,6 +23,7 @@
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
     "sort-by": "^1.2.0",
+    "storybook": "^7.5.2",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
