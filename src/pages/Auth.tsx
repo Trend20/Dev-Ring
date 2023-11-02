@@ -30,6 +30,14 @@ const Auth = ():JSX.Element => {
       console.error(error);
     }
   }
+
+  const logout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div>
       <form onSubmit={Login}>

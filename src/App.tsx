@@ -11,21 +11,19 @@ import StatsCards from './components/StatsCards';
 import ReadToJoin from './components/ReadToJoin';
 import Navbar from './components/Navbar';
 import Waitlist from './pages/Waitlist';
+import Auth from './pages/Auth';
+import Home from './pages/Home';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="app">
-      <Navbar />
-      <Hero />
-      <About />
-      <StatsCards />
-      <Features />
-      <ReadToJoin />
-    </div>
+    <div className="app">
     <Routes>
+      <Route path="/" element={<Home />}/>
       <Route path='/waitlist' element={<Waitlist />} />
+      <Route path='/auth' element={<Auth />} />
     </Routes>
+    </div>
     </BrowserRouter>
   );
 }
