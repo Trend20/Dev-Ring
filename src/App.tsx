@@ -17,10 +17,10 @@ import Home from './pages/Home';
 function App() {
   return (
     <BrowserRouter>
-    <div className="app">
+    <div className="app min-h-screen">
     <Routes>
       <Route path="/" element={<Home />}/>
-      <Route path='/waitlist' element={<Waitlist />} />
+      {/* <Route path='/waitlist' element={<Waitlist />} /> */}
       <Route path='/auth' element={<Auth />} />
     </Routes>
     </div>
