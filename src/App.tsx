@@ -10,7 +10,7 @@ import Home from './pages/Home';
 function App() {
   return (
     <BrowserRouter>
-    <div className="app min-h-screen">
+    <div className="app min-h-screen overflow-hidden">
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path='/auth' element={<Auth />} />
