@@ -8,7 +8,7 @@ const Navbar = ():JSX.Element => {
       <div className="flex w-80 items-center md:w-60 max-md:items-start">
         <i><FaLifeRing size={50}/></i>
       </div>
-      <button onClick={() => navigate('/auth')} className='bg-black rounded-br-lg text-cyan-300 font-bold p-3 mt-5 justify-center max-md:justify-end items-center flex w-40 max-md:w-60'>Get Started</button>
+      <button onClick={() => navigate('/auth')} className='bg-black rounded-br-lg text-cyan-300 font-bold p-3 mt-5 justify-center items-center flex w-40 max-md:w-36 max-md:text-sm'>Get Started</button>
     </div>
   )
 }
