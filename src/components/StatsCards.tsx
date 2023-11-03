@@ -2,7 +2,7 @@ import Card from "./Card";
 
 const StatsCards = () => {
   return (
-    <div className="flex w-1/2 m-auto">
+    <div className="flex w-1/2 m-auto max-md:flex-col max-md:w-full">
       <Card
         svg={
           <svg viewBox="0 0 200 200">
