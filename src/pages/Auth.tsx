@@ -6,7 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { FaLifeRing } from "react-icons/fa";
-import { FcGoogle} from 'react-icons/fc'
+import { FcGoogle } from "react-icons/fc";
 import commImg from "../assets/images/comm.jpg";
 
 const Auth = (): JSX.Element => {
@@ -42,7 +42,7 @@ const Auth = (): JSX.Element => {
     }
   };
   return (
-    <div className="flex w-full m-auto bg-cyan-300 justify-between items-centre rounded">
+    <div className="flex w-full m-auto bg-cyan-200 justify-between items-centre rounded">
       <div className="flex flex-col justify-center items-center w-1/2 p-10 m-auto min-h-screen text-cyan-300 bg-white">
         <div className="flex items-center flex-col">
           <i>
@@ -74,22 +74,31 @@ const Auth = (): JSX.Element => {
           </div>
           <button
             type="submit"
-            className="bg-black rounded-br-lg text-cyan-300 font-bold flex justify-center items-center border w-40 mt-5 p-2 h-14"
+            className="bg-black rounded-br-lg text-cyan-300 font-bold uppercase flex justify-center items-center border w-40 mt-5 p-2 h-14"
           >
             Sign In
           </button>
         </form>
         <button
           onClick={googleLogin}
-          className="flex justify-center items-center border w-3/4 uppercase text-sm mt-12 font-bold text-black p-2"
+          className="flex justify-center items-center border rounded-r-lg w-3/4 uppercase text-sm mt-12 font-bold text-black p-2"
         >
-          <i className="px-6"><FcGoogle  size={40}/></i>
+          <i className="px-6">
+            <FcGoogle size={40} />
+          </i>
           Sign In with Google
         </button>
       </div>
-      <div className="flex w-3/4 min-h-screen justify-center items-center flex-col">
-        <img src={commImg} alt="login" />
-        <p>We connect you to your local tech communities and events!</p>
+      <div className="flex w-3/4 min-h-screen flex-col p-10 justify-center items-start">
+        <h3 className="text-5xl font-bold w-full">
+          We connect you to your local tech communities and events!
+        </h3>
+        <p className="w-3/4 mt-10 leading-8 text-lg">
+          Join DevRing today and unlock the full potential of your local
+          developer community. Start building meaningful connections, fostering
+          professional growth, and discovering new opportunities in your
+          tech-savvy neighborhood. <strong>DevRing</strong> - Where Local Meets Digital!
+        </p>
       </div>
     </div>
   );
