@@ -42,8 +42,8 @@ const Auth = (): JSX.Element => {
     }
   };
   return (
-    <div className="flex w-full m-auto bg-cyan-200 justify-between items-centre rounded">
-      <div className="flex flex-col justify-center items-center w-1/2 p-10 m-auto min-h-screen text-cyan-300 bg-white">
+    <div className="flex w-full m-auto bg-cyan-200 justify-between items-centre rounded max-md:flex-col-reverse">
+      <div className="flex flex-col justify-center items-center w-1/2 p-10 m-auto min-h-screen text-cyan-300 bg-white max-md:w-full">
         <div className="flex items-center flex-col">
           <i>
             <FaLifeRing size={50} fill="#000" />
@@ -54,7 +54,7 @@ const Auth = (): JSX.Element => {
           onSubmit={Login}
           className="flex flex-col w-full justify-center items-center mt-14"
         >
-          <div className="flex w-3/4">
+          <div className="flex w-3/4 max-md:w-full">
             <input
               type="text"
               placeholder="Email..."
@@ -63,7 +63,7 @@ const Auth = (): JSX.Element => {
               className="flex rounded border px-6 py-3 w-full text-black outline-none"
             />
           </div>
-          <div className="flex w-3/4">
+          <div className="flex w-3/4 max-md:w-full">
             <input
               type="password"
               placeholder="Password..."
@@ -81,7 +81,7 @@ const Auth = (): JSX.Element => {
         </form>
         <button
           onClick={googleLogin}
-          className="flex justify-center items-center border rounded-r-lg w-3/4 uppercase text-sm mt-12 font-bold text-black p-2"
+          className="flex justify-center items-center border rounded-r-lg w-3/4 uppercase text-sm mt-12 font-bold text-black p-2 max-md:w-full"
         >
           <i className="px-6">
             <FcGoogle size={40} />
@@ -89,11 +89,11 @@ const Auth = (): JSX.Element => {
           Sign In with Google
         </button>
       </div>
-      <div className="flex w-3/4 min-h-screen flex-col p-10 justify-center items-start">
-        <h3 className="text-5xl font-bold w-full">
+      <div className="flex w-3/4 min-h-screen flex-col p-10 justify-center items-start max-md:w-full max-md:p-3 max-md:max-h-80">
+        <h3 className="text-5xl font-bold w-full max-md:text-4xl">
           We connect you to your local tech communities and events!
         </h3>
-        <p className="w-3/4 mt-10 leading-8 text-lg">
+        <p className="w-3/4 mt-10 leading-8 text-lg max-md:w-full max-md:mt-5 max-md:leading-6">
           Join DevRing today and unlock the full potential of your local
           developer community. Start building meaningful connections, fostering
           professional growth, and discovering new opportunities in your
