@@ -89,7 +89,7 @@ const Auth = (): JSX.Element => {
           Sign In with Google
         </button>
       </div>
-      <div className="flex w-3/4 min-h-screen flex-col p-10 justify-center items-start max-md:w-full max-md:p-3 max-md:max-h-80">
+      <div className="flex w-3/4 min-h-screen flex-col p-10 justify-center items-start max-md:w-full max-md:p-3 max-md:max-h-80 max-md:hidden">
         <h3 className="text-5xl font-bold w-full max-md:text-4xl">
           We connect you to your local tech communities and events!
         </h3>
