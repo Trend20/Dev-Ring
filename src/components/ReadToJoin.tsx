@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 const ReadToJoin = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <div className="flex text-cyan-200 flex-col justify-center items-center w-1/2 m-auto p-5 mt-32 max-md:w-full max-md:p-3 max-md:mt-10">
       <p className="flex w-72 -rotate-45 max-md:w-52">
@@ -19,7 +21,7 @@ const ReadToJoin = (): JSX.Element => {
         skills, expanding their networks, and building great things. You’re just
         a few clicks away from finding the perfect community for you!
       </p>
-      <button className="text-black rounded-br-lg bg-cyan-300 font-bold p-3 mt-5 justify-center items-center flex w-40">
+      <button onClick={() =>navigate('/auth')} className="text-black rounded-br-lg bg-cyan-300 font-bold p-3 mt-5 justify-center items-center flex w-40">
         Find Yours Now!
       </button>
     </div>

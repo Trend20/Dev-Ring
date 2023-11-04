@@ -30,7 +30,7 @@ const Features = () => {
             featureInfo.map((info) =>(
               <div className="flex flex-col mt-20 max-md:mt-6">
               <h5 className='text-2xl'>{info.title}</h5>
-              <p className='flex mt-3 w-3/4 text-lg max-md:w-full max-md:mt-1'>{info.desc}</p>
+              <p className='flex mt-3 w-3/4 text-lg max-md:w-full max-md:mt-1 max-md:text-sm'>{info.desc}</p>
             </div>
             ))
           }
