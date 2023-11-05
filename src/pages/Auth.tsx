@@ -7,7 +7,6 @@ import {
 } from "firebase/auth";
 import { FaLifeRing } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import commImg from "../assets/images/comm.jpg";
 
 const Auth = (): JSX.Element => {
   const [email, setEmail] = useState("");
