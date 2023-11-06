@@ -28,3 +28,33 @@ It aims to provide a centralized platform for developers to `find dev communitie
 
 ### DevOps 
 - [Docker](https://www.docker.com/)
+
+## Prerequisites
+
+Before contributing or adding a new feature, please make sure you have already installed the following tools:
+
+- `NodeJs` (Works with Node LTS version v18.16.1)
+ Optional `NVM`: Switch Node version by using nvm use (on Windows, use nvm use v18.16.1). If this is not installed, run nvm install v18.16.1.
+
+## Commands
+
+To run the project locally, follow the steps below:
+
+1. Clone the project by running: `git clone git@github.com:Trend20/Dev-Ring.git`
+
+After cloning, get the project running by following these  steps:
+
+1. copy the `.env.example` file to `.env` and update any details required
+2. `yarn` to install the project dependencies 
+3. `yarn start` to start the project.
+
+## Production deployment
+Run this command to build the project.
+
+`npm run build`
+
+## Contributing
+Check out the [CONTRIBUTING.md](https://github.com/Trend20/Dev-Ring/blob/main/CONTRIBUTING.md) guide to assist with all you need to know before getting started with making changes to the codebase.
+
+## License
+[MIT License](https://github.com/Trend20/Dev-Ring/blob/main/LICENSE)
