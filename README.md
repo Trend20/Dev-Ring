@@ -2,14 +2,12 @@
 
 <!-- # Project Name: Dev Ring -->
 
-Live: [https://contriquest.vercel.app/](https://contriquest.vercel.app/)
+Live: [https://dev-ring-4a055.web.app/](https://dev-ring-4a055.web.app/)
 
 # Dev Ring
 
-`Dev Ring` is an open-source web application platform that ranks developers based on their projects' activity and impact. 
-It aims to provide a centralized platform for developers `to track and showcase their work`, `collaborate with others`, `compare themselves to top developers` and `gain recognition within the developer community`.
-
-This platform can also be used by `employers` to easily find `developers` who best suits their companies.
+`Dev Ring` is an open-source web application platform that helps developers locate local developer communities based on their location. 
+It aims to provide a centralized platform for developers to `find dev communities`, `collaborate with others`, and `gain recognition within the developer community`.
 
 ![user-form](src/assets/images/home.png)
 
