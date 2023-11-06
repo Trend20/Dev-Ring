@@ -2,7 +2,7 @@
 
 <!-- # Project Name: Dev Ring -->
 
-Live: [https://contriquest.vercel.app/](https://contriquest.vercel.app/)
+Live: [https://dev-ring-4a055.web.app/](https://dev-ring-4a055.web.app/)
 
 # Dev Ring
 
