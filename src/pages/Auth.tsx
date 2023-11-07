@@ -8,6 +8,8 @@ import {
 import { FaLifeRing } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import {NavigateFunction, useNavigate} from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type FormData = {
   email: string
@@ -31,9 +33,10 @@ const Auth = (): JSX.Element => {
       const user = await createUserWithEmailAndPassword(auth, email, password);
       if(user){
         console.log(user);
+        successNotify()
         navigate('/profile');
       }else{
-
+        errorNotify()
       }
     } catch (error) {
       console.error(error);
@@ -52,6 +55,19 @@ const Auth = (): JSX.Element => {
 
   };
 
+  // alert
+  const errorNotify = () =>{
+    toast.error("Invalid user credentials !", {
+      position: toast.POSITION.TOP_LEFT
+    });
+  }
+
+  const successNotify = () =>{
+    toast.error("Invalid user credentials !", {
+      position: toast.POSITION.TOP_LEFT
+    });
+  }
+
   // const logout = async ():Promise<void> => {
   //   try {
   //     await signOut(auth);
@@ -61,6 +77,7 @@ const Auth = (): JSX.Element => {
   // };
   return (
     <div className="flex w-full m-auto bg-cyan-200 justify-between items-centre rounded max-md:flex-col-reverse">
+      <ToastContainer />
       <div className="flex flex-col justify-center items-center w-1/2 p-10 m-auto min-h-screen text-cyan-300 bg-white max-md:w-full">
         <div className="flex items-center flex-col">
           <i>
