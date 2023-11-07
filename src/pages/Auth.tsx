@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { FaLifeRing } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import {NavigateFunction, useNavigate} from "react-router-dom";
 
 type FormData = {
   email: string
@@ -18,6 +19,7 @@ const Auth = (): JSX.Element => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
+  const navigate: NavigateFunction = useNavigate()
 
   // login with email
   const Login = async (e: FormEvent):Promise<void> => {
@@ -26,7 +28,13 @@ const Auth = (): JSX.Element => {
       setError(true)
     }
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      if(user){
+        console.log(user);
+        navigate('/profile');
+      }else{
+
+      }
     } catch (error) {
       console.error(error);
     }
@@ -41,6 +49,7 @@ const Auth = (): JSX.Element => {
     } catch (error) {
       console.error(error);
     }
+
   };
 
   // const logout = async ():Promise<void> => {
