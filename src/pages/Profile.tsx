@@ -1,94 +1,59 @@
 import profileImg from "../assets/images/pic.jpeg";
+import {
+    Tabs,
+    TabsHeader,
+    TabsBody,
+    Tab,
+    TabPanel,
+} from "@material-tailwind/react";
+import {TabData} from "../types/tabData";
 const Profile = (): JSX.Element => {
+    const data:TabData[] = [
+        {
+            label: "My Communities",
+            value: "vue",
+            desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+        },
+        {
+            label: "My Favorites",
+            value: "angular",
+            desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+        },
+        {
+            label: "My Archive",
+            value: "svelte",
+            desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+        },
+    ];
   return (
-    <div className="flex flex-col justify-center items-center bg-cyan-200 min-h-screen">
+    <div className="flex flex-col justify-center items-center bg-cyan-100 pt-10 min-h-screen">
       <div className="flex flex-col justify-center items-center">
         <img src={profileImg} alt="profile" className="flex w-40 h-40 rounded-full" />
         <h5>Dev Enock</h5>
         <p>enockdevring@gmail.com</p>
       </div>
-      <div className="">
-        <ul
-          className="mb-5 flex list-none flex-row flex-wrap border-b-0 pl-0"
-          role="tablist"
-          data-te-nav-ref
-        >
-          <li role="presentation">
-            <a
-              href="#tabs-home"
-              className="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
-              data-te-toggle="pill"
-              data-te-target="#tabs-home"
-              data-te-nav-active
-              role="tab"
-              aria-controls="tabs-home"
-              aria-selected="true"
-            >
-              Home
-            </a>
-          </li>
-          <li role="presentation">
-            <a
-              href="#tabs-profile"
-              className="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
-              data-te-toggle="pill"
-              data-te-target="#tabs-profile"
-              role="tab"
-              aria-controls="tabs-profile"
-              aria-selected="false"
-            >
-              Profile
-            </a>
-          </li>
-          <li role="presentation">
-            <a
-              href="#tabs-messages"
-              className="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
-              data-te-toggle="pill"
-              data-te-target="#tabs-messages"
-              role="tab"
-              aria-controls="tabs-messages"
-              aria-selected="false"
-            >
-              Messages
-            </a>
-          </li>
-        </ul>
-        <div className="mb-6">
-          <div
-            className="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-home"
-            role="tabpanel"
-            aria-labelledby="tabs-home-tab"
-            data-te-tab-active
-          >
-            Tab 1 content
-          </div>
-          <div
-            className="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-profile"
-            role="tabpanel"
-            aria-labelledby="tabs-profile-tab"
-          >
-            Tab 2 content
-          </div>
-          <div
-            className="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-messages"
-            role="tabpanel"
-            aria-labelledby="tabs-profile-tab"
-          >
-            Tab 3 content
-          </div>
-          <div
-            className="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-            id="tabs-contact"
-            role="tabpanel"
-            aria-labelledby="tabs-contact-tab"
-          >
-            Tab 4 content
-          </div>
-        </div>
+      <div className="flex w-1/4 mt-10">
+          <Tabs value="html">
+              <TabsHeader>
+                  {data.map(({ label, value }) => (
+                      <Tab key={value} value={value}>
+                          {label}
+                      </Tab>
+                  ))}
+              </TabsHeader>
+              <TabsBody>
+                  {data.map(({ value, desc }) => (
+                      <TabPanel key={value} value={value}>
+                          {desc}
+                      </TabPanel>
+                  ))}
+              </TabsBody>
+          </Tabs>
       </div>
     </div>
   );
