@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import {ChangeEvent, FormEvent, useState} from "react";
 import { auth, authProvider } from "../config/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -8,13 +8,23 @@ import {
 import { FaLifeRing } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
+type FormData = {
+  email: string
+  password: string
+  error: boolean
+}
+
 const Auth = (): JSX.Element => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
 
   // login with email
-  const Login = async (e: FormEvent) => {
+  const Login = async (e: FormEvent):Promise<void> => {
     e.preventDefault();
+    if(email === "" || password === ''){
+      setError(true)
+    }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
     } catch (error) {
@@ -24,8 +34,8 @@ const Auth = (): JSX.Element => {
     setPassword("");
   };
 
-  // login with google id
-  const googleLogin = async () => {
+  // login with Google id
+  const googleLogin = async ():Promise<void> => {
     try {
       await signInWithPopup(auth, authProvider);
     } catch (error) {
@@ -33,7 +43,7 @@ const Auth = (): JSX.Element => {
     }
   };
 
-  // const logout = async () => {
+  // const logout = async ():Promise<void> => {
   //   try {
   //     await signOut(auth);
   //   } catch (error) {
@@ -49,6 +59,9 @@ const Auth = (): JSX.Element => {
           </i>
           <p className="text-black font-bold">DevRing</p>
         </div>
+        {
+          error ? <p className="flex mt-5 bg-red-700 text-white p-2 rounded-r-lg">Please provide the required details</p> : ''
+        }
         <form
           onSubmit={Login}
           className="flex flex-col w-full justify-center items-center mt-14"
@@ -58,8 +71,8 @@ const Auth = (): JSX.Element => {
               type="text"
               placeholder="Email..."
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex rounded border px-6 py-3 w-full text-black outline-none"
+              onChange={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+              className={error? "flex rounded border border-red-700 px-6 py-3 w-full text-black outline-none" : "flex rounded border border-black px-6 py-3 w-full text-black outline-none"}
             />
           </div>
           <div className="flex w-3/4 max-md:w-full">
@@ -67,8 +80,8 @@ const Auth = (): JSX.Element => {
               type="password"
               placeholder="Password..."
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="flex rounded border px-6 py-3 mt-10 w-full text-black outline-none"
+              onChange={(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+              className={error? "flex rounded border border-red-700 px-6 py-3 mt-10 w-full text-black outline-none" : "flex rounded border border-black px-6 py-3 mt-10 w-full text-black outline-none"}
             />
           </div>
           <button
