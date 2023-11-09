@@ -1,5 +1,3 @@
-import React from "react";
-
 const AuthPageDesc = () => {
   return (
     <div className="flex w-3/4 min-h-screen flex-col p-10 justify-center items-start max-md:w-full max-md:p-3 max-md:max-h-80 max-md:hidden">

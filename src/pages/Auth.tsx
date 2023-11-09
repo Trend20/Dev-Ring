@@ -49,10 +49,11 @@ const Auth = (): JSX.Element => {
   const googleLogin = async ():Promise<void> => {
     try {
       const user = await signInWithPopup(auth, authProvider);
-      if(!user){
-        errorNotify()
+      if(user){
+        console.log(user);
+        // navigate('/update');
       }else{
-        navigate('/update');
+        errorNotify()
       }
     } catch (error) {
       console.error(error);
