@@ -10,11 +10,11 @@ import { FcGoogle } from "react-icons/fc";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AuthPageDesc from "../components/AuthPageDesc";
 
 type FormData = {
   email: string
   password: string
-  error: boolean
 }
 
 const Auth = (): JSX.Element => {
@@ -34,7 +34,7 @@ const Auth = (): JSX.Element => {
       if(user){
         console.log(user);
         successNotify()
-        navigate('/profile');
+        navigate('/update');
       }else{
         errorNotify()
       }
@@ -48,7 +48,12 @@ const Auth = (): JSX.Element => {
   // login with Google id
   const googleLogin = async ():Promise<void> => {
     try {
-      await signInWithPopup(auth, authProvider);
+      const user = await signInWithPopup(auth, authProvider);
+      if(!user){
+        errorNotify()
+      }else{
+        navigate('/update');
+      }
     } catch (error) {
       console.error(error);
     }
@@ -79,7 +84,7 @@ const Auth = (): JSX.Element => {
     <div className="flex w-full m-auto bg-cyan-200 justify-between items-centre rounded max-md:flex-col-reverse">
       <ToastContainer />
       <div className="flex flex-col justify-center items-center w-1/2 p-10 m-auto min-h-screen text-cyan-300 bg-white max-md:w-full">
-        <div className="flex items-center flex-col">
+        <div className="flex items-center flex-col cursor-pointer" onClick={() => navigate('/')}>
           <i>
             <FaLifeRing size={50} fill="#000" />
           </i>
@@ -98,7 +103,7 @@ const Auth = (): JSX.Element => {
               placeholder="Email..."
               value={email}
               onChange={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              className={error? "flex rounded border border-red-700 px-6 py-3 w-full text-black outline-none" : "flex rounded border border-black px-6 py-3 w-full text-black outline-none"}
+              className={error? "flex rounded border border-red-700 px-6 py-3 w-full text-black outline-none" : "flex rounded border px-6 py-3 w-full text-black outline-none"}
             />
           </div>
           <div className="flex w-3/4 max-md:w-full">
@@ -107,7 +112,7 @@ const Auth = (): JSX.Element => {
               placeholder="Password..."
               value={password}
               onChange={(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-              className={error? "flex rounded border border-red-700 px-6 py-3 mt-10 w-full text-black outline-none" : "flex rounded border border-black px-6 py-3 mt-10 w-full text-black outline-none"}
+              className={error? "flex rounded border border-red-700 px-6 py-3 mt-10 w-full text-black outline-none" : "flex rounded border  px-6 py-3 mt-10 w-full text-black outline-none"}
             />
           </div>
           <button
@@ -119,7 +124,7 @@ const Auth = (): JSX.Element => {
         </form>
         <button
           onClick={googleLogin}
-          className="flex justify-center items-center border rounded-r-lg w-3/4 uppercase text-sm mt-12 font-bold text-black p-2 max-md:w-full"
+          className="flex justify-center items-center border-2 border-cyan-300 rounded-r-lg w-72 uppercase text-sm mt-12 font-bold text-black p-2 max-md:w-full"
         >
           <i className="px-6">
             <FcGoogle size={40} />
@@ -127,17 +132,7 @@ const Auth = (): JSX.Element => {
           Sign In with Google
         </button>
       </div>
-      <div className="flex w-3/4 min-h-screen flex-col p-10 justify-center items-start max-md:w-full max-md:p-3 max-md:max-h-80 max-md:hidden">
-        <h3 className="text-5xl font-bold w-full max-md:text-4xl">
-          We connect you to your local tech communities and events!
-        </h3>
-        <p className="w-3/4 mt-10 leading-8 text-lg max-md:w-full max-md:mt-5 max-md:leading-6">
-          Join DevRing today and unlock the full potential of your local
-          developer community. Start building meaningful connections, fostering
-          professional growth, and discovering new opportunities in your
-          tech-savvy neighborhood. <strong>DevRing</strong> - Where Local Meets Digital!
-        </p>
-      </div>
+      <AuthPageDesc />
     </div>
   );
 };
