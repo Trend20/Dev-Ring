@@ -1,5 +1,6 @@
 import React from "react";
 import profileImg from "../assets/images/pic.jpeg";
+import logoSvg from '../assets/images/logo.svg'
 import {
   Tabs,
   TabsHeader,
@@ -12,37 +13,24 @@ const Profile = () => {
   const [activeTab, setActiveTab] = React.useState("html");
   const data = [
     {
-      label: "HTML",
+      label: "My Communities",
       value: "html",
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people 
-      who are like offended by it, it doesn't matter.`,
+      content:"Yes"
     },
     {
-      label: "React",
+      label: "My Events",
       value: "react",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
+      content:"Yes"
     },
     {
-      label: "Vue",
+      label: "My Favorites",
       value: "vue",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      content:"Yes"
     },
     {
-      label: "Angular",
+      label: "Archived",
       value: "angular",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-      label: "Svelte",
-      value: "svelte",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      content:"Yes"
     },
   ];
   return (
@@ -76,9 +64,9 @@ const Profile = () => {
           ))}
         </TabsHeader>
         <TabsBody className="flex w-96">
-          {data.map(({ value, desc }) => (
+          {data.map(({ value, content }) => (
             <TabPanel key={value} value={value}>
-              {desc}
+             {content}
             </TabPanel>
           ))}
         </TabsBody>
