@@ -51,7 +51,7 @@ const Auth = (): JSX.Element => {
       const user = await signInWithPopup(auth, authProvider);
       if(user){
         console.log(user);
-        // navigate('/update');
+        navigate('/profile');
       }else{
         errorNotify()
       }
