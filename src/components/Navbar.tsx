@@ -1,8 +1,8 @@
 import { FaLifeRing} from 'react-icons/fa'
-import { useNavigate } from 'react-router-dom';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 const Navbar = ():JSX.Element => {
-  const navigate = useNavigate();
+  const navigate:NavigateFunction = useNavigate();
   return (
     <div className='flex w-full items-center justify-between bg-cyan-200 px-16 max-md:w-full max-md:px-6 max-md:py-6'>
       <div className="flex w-80 items-center cursor-pointer md:w-60 max-md:items-start" onClick={() => navigate('/')}>
