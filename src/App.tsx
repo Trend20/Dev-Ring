@@ -3,7 +3,6 @@ import {
   Routes,
   Route,
   useLocation,
-  useParams,
 } from "react-router-dom";
 import Auth from './pages/Auth';
 import Home from './pages/Home';
@@ -12,10 +11,7 @@ import UpdateProfile from './components/UpdateProfile';
 import Navbar from './components/Navbar';
 
 const App = ():JSX.Element =>{
-  const location = useLocation();
-  console.log(location.pathname);
-  const {auth} = useParams();
-  
+  const location:any = useLocation();
   return (
     <div className="app min-h-screen flex flex-col w-full overflow-hidden bg-cyan-200">
     {location.pathname !== '/auth' ? <Navbar /> : ''}

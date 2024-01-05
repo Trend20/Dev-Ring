@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { FaLifeRing } from "react-icons/fa";
+import { LuStepBack } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
@@ -18,6 +19,7 @@ type FormData = {
 }
 
 const Auth = (): JSX.Element => {
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
@@ -28,7 +30,9 @@ const Auth = (): JSX.Element => {
     e.preventDefault();
     if(email === "" || password === ''){
       setError(true)
+      errorNotify();
     }
+    setError(false)
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
       if(user){
@@ -64,13 +68,13 @@ const Auth = (): JSX.Element => {
   // alert
   const errorNotify = () =>{
     toast.error("Invalid user credentials !", {
-      position: toast.POSITION.TOP_LEFT
+      position: toast.POSITION.TOP_RIGHT
     });
   }
 
   const successNotify = () =>{
     toast.error("Invalid user credentials !", {
-      position: toast.POSITION.TOP_LEFT
+      position: toast.POSITION.TOP_RIGHT
     });
   }
 
@@ -82,7 +86,11 @@ const Auth = (): JSX.Element => {
   //   }
   // };
   return (
+
     <div className="flex w-full m-auto bg-cyan-200 justify-between items-centre rounded max-md:flex-col-reverse">
+      <button className="flex absolute top-5 left-5 bg-blue-gray-50 h-12 justify-center items-center p-5 rounded-full cursor-pointer" onClick={() =>navigate('/')}>
+          <p className="flex items-center"><i><LuStepBack size={30}/></i> Back to homepage</p>
+      </button>
       <ToastContainer />
       <div className="flex flex-col justify-center items-center w-1/2 p-10 m-auto min-h-screen text-cyan-300 bg-white max-md:w-full">
         <div className="flex items-center flex-col cursor-pointer" onClick={() => navigate('/')}>
@@ -91,9 +99,6 @@ const Auth = (): JSX.Element => {
           </i>
           <p className="text-black font-bold">DevRing</p>
         </div>
-        {
-          error ? <p className="flex mt-5 bg-red-700 text-white p-2 rounded-r-lg">Please provide the required details</p> : ''
-        }
         <form
           onSubmit={Login}
           className="flex flex-col w-full justify-center items-center mt-14"
@@ -104,7 +109,7 @@ const Auth = (): JSX.Element => {
               placeholder="Email..."
               value={email}
               onChange={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              className={error? "flex rounded border border-red-700 px-6 py-3 w-full text-black outline-none" : "flex rounded border px-6 py-3 w-full text-black outline-none"}
+              className={error? "flex rounded border border-red-700 px-3 py-3 w-full text-black outline-none" : "flex rounded ring-1 px-3 py-3 w-full text-black outline-none focus:border-red-500"}
             />
           </div>
           <div className="flex w-3/4 max-md:w-full">
@@ -113,7 +118,7 @@ const Auth = (): JSX.Element => {
               placeholder="Password..."
               value={password}
               onChange={(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-              className={error? "flex rounded border border-red-700 px-6 py-3 mt-10 w-full text-black outline-none" : "flex rounded border  px-6 py-3 mt-10 w-full text-black outline-none"}
+              className={error? "flex rounded border border-red-700 px-3 py-3 mt-10 w-full text-black outline-none" : "flex rounded px-3 py-3 mt-10 w-full text-black outline-none ring-1 focus:border-red-500"}
             />
           </div>
           <button

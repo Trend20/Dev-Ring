@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import profileImg from "../assets/images/pic.jpeg";
-import logoSvg from '../assets/images/logo.svg'
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
+import Communities from '../components/Communities';
+import Events from "../components/Events";
+import Favorites from "../components/Favorites";
+import Archived from "../components/Archived";
 
 const Profile = () => {
-  const [activeTab, setActiveTab] = React.useState("html");
+  const [openTab, setOpenTab] = useState<string>("communities");
+
+  const handleTabOpen = (tabCategory: string) => {
+      setOpenTab(tabCategory);
+  };
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen((cur) => !cur);
+
   const data = [
     {
       label: "My Communities",
@@ -44,33 +47,62 @@ const Profile = () => {
         <h5>Dev Enock</h5>
         <p>enockdevring@gmail.com</p>
       </div>
-      <Tabs value={activeTab} className="w-1/2 mt-20 m-auto">
-        <TabsHeader
-          className="rounded-none border-b border-blue-gray-50 bg-transparent p-0"
-          indicatorProps={{
-            className:
-              "bg-transparent border-b-2 border-gray-900 shadow-none rounded-none",
-          }}
-        >
-          {data.map(({ label, value }) => (
-            <Tab
-              key={value}
-              value={value}
-              onClick={() => setActiveTab(value)}
-              className={activeTab === value ? "text-gray-900" : ""}
-            >
-              {label}
-            </Tab>
-          ))}
-        </TabsHeader>
-        <TabsBody className="flex w-96">
-          {data.map(({ value, content }) => (
-            <TabPanel key={value} value={value}>
-             {content}
-            </TabPanel>
-          ))}
-        </TabsBody>
-      </Tabs>
+      <section className="py-5 dark:bg-dark">
+                <div className="container">
+                    <div className="-mx-4 flex flex-wrap">
+                        <div className="w-full px-4">
+                            <div className="mb-14 w-full">
+                                <div className="flex flex-col justify-between w-full  flex-wrap rounded-full border border-blue-gray-200 px-2 py-2 dark:border-dark-3 sm:flex-row">
+                                    <a
+                                        onClick={() => handleTabOpen("communities")}
+                                        className={`cursor-pointer rounded-full px-4 py-3 text-sm w-32 bg-blue-gray-50 items-center justify-center flex font-medium md:text-base lg:px-6 ${
+                                            openTab === "communities"
+                                                ? "bg-boxdark text-white"
+                                                : "text-body-color hover:bg-black hover:text-white dark:text-dark-6 dark:hover:text-white"
+                                        }`}
+                                    >
+                                        Communities
+                                    </a>
+                                    <a
+                                        onClick={() => handleTabOpen("events")}
+                                        className={`cursor-pointer rounded-full px-4 py-3 text-sm w-32 bg-blue-gray-50 items-center justify-center flex font-medium md:text-base lg:px-6 ${
+                                            openTab === "events"
+                                                ? "bg-boxdark text-white"
+                                                : "text-body-color hover:bg-black hover:text-white dark:text-dark-6 dark:hover:text-white"
+                                        }`}
+                                    >
+                                        Events
+                                    </a>
+                                    <a
+                                        onClick={() => handleTabOpen("favorites")}
+                                        className={`cursor-pointer rounded-full px-4 py-3 text-sm w-32 bg-blue-gray-50 items-center justify-center flex font-medium md:text-base lg:px-6 ${
+                                            openTab === "favorites"
+                                                ? "bg-boxdark text-white"
+                                                : "text-body-color hover:bg-black hover:text-white dark:text-dark-6 dark:hover:text-white"
+                                        }`}
+                                    >
+                                        Favorites
+                                    </a>
+                                    <a
+                                        onClick={() => handleTabOpen("archived")}
+                                        className={`cursor-pointer rounded-full px-4 py-3 text-sm w-32 bg-blue-gray-50 items-center justify-center flex font-medium md:text-base lg:px-6 ${
+                                            openTab === "archived"
+                                                ? "bg-boxdark text-white"
+                                                : "text-body-color hover:bg-black hover:text-white dark:text-dark-6 dark:hover:text-white"
+                                        }`}
+                                    >
+                                        Archived
+                                    </a>
+                                </div>
+                                <Communities tabCategory="communities" open={openTab}/>
+                                <Events tabCategory="events" open={openTab}/>
+                                <Favorites tabCategory="favorites" open={openTab}/>
+                                <Archived tabCategory="archived" open={openTab}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
     </div>
   );
 };
