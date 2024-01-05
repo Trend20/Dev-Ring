@@ -7,7 +7,6 @@ const Communities = ({tabCategory, open}:any) => {
                 open === tabCategory ? "grid grid-cols-3 w-full gap-10 mt-10" : "hidden"
             } `}>
                 <h1>Communities</h1>
-                    
             </div>
     </div>
   )
